@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHAPTER 2</title>
+</head>
+<body>
+<h1>Hello WORLD</h1>
+
+<!-- Task 1(#1)  -->
+<!-- 
+ for (var i = 0; i < 10; i++) {
+    setTimeout(function(){
+         console.log(i);
+     }
+ }
+Что выведет консоль и почему? -->
+<!-- Будет ошибка, так как у цикла нет аргументов -->
+
+<!-- Task 2(#1)  -->
+    <script type="text/javascript">   
+   var today = new Date(); 
+  var day = today.getDay();
+  var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+    console.log("Today is : " + daylist[day] + ".");
+  var hour = today.getHours();
+  var minute = today.getMinutes();
+  var second = today.getSeconds();
+  var prepand = (hour >= 12)? " PM ":" AM ";
+    hour = (hour >= 12)? hour - 12: hour;
+        if (hour===0 && prepand===' PM ') { 
+            if (minute===0 && second===0){ 
+                hour=12;
+                prepand=' Noon';
+            }else{ 
+                hour=12;
+                prepand=' PM';
+            }  
+  } 
+  if (hour===0 && prepand===' AM ') { 
+    if (minute===0 && second===0){ 
+        hour=12;
+        prepand=' Midnight';
+  }else{ 
+    hour=12;
+    prepand=' AM';
+  } 
+  } 
+console.log("Current Time : "+ hour + prepand + " : " + minute + " : " + second);
+    </script>
+    <!-- Task 2(#2) -->
+<script> 
+    function reversenumber(n)
+    {
+        n = n + "";
+        return n.split("").reverse().join("");
+    }
+    console.log(reversenumber(12345));
+</script>
+<!-- Task 2(#3) -->
+<script> 
+    function factorial(x){ 
+  if (x === 0){
+    return 1;
+ }
+    return x * factorial(x-1);
+}
+console.log(factorial(5));
+</script>
+<!-- Task 2(#4) -->
+<script> 
+var num1, num2;
+num1 = prompt("1st number", "0");
+num2 = prompt("2nd number", "0");
+                                                 
+if(parseInt(num1, 10) > parseInt(num2, 10)) { 
+  console.log(num1);
+  }   
+else if(parseInt(num2, 10) > parseInt(num1, 10)) {
+  console.log(num2);
+  }else{
+   console.log("They are equal");
+  }
+</script>
+<!-- Task 2 (#5) -->
+<script>
+myArray = ["Red", "Green", "White", "Black"];
+console.log(myArray.toString());
+console.log(myArray.join());
+console.log(myArray.join('+'));
+</script>
+<!-- Task 2 (#6) -->
+<script>
+    var month = function(date){
+    monthArray = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+    return monthArray[date.getMonth()];
+};
+console.log(month(new Date("10/11/2009")));
+console.log(month(new Date("11/13/2014")));
+    </script>
+<script>
+        function testcase(str){
+        return /[A-Z]/.test(str[0]);
+        };
+        console.log(testcase('AAAA'));
+        console.log(testcase('aaaa'));
+</script>
+<!-- Task 2 (#7) -->
+<div class="canvas">
+<canvas id="Smile" width="200" height="150"
+style="border:50px solid rgba(57, 34, 190, 0.945);">
+</div>
+<script>
+    var canvas = document.getElementById("Smile");
+    var ctx = canvas.getContext("2d");
+ctx.arc(100, 60, 55, 0, Math.PI); 
+ctx.moveTo(95, 65);
+ctx.stroke();
+    </script>
+<!-- Task 4 (#1) -->
+<div id="string-1">Ядра в вёдра, выдру в тундру!</div>
+<div id="string-2">Выдрав с выдры в тундре гетры</div>
+<div id="string-3">В недрах тундры, выдры в гетрах </div>
+<div id="string-4">Вытру гетрой выдре морду </div>
+<div id="string-5">Тырят в вёдра ядра кедров!</div> 
+<div id="string-6">Вытру выдрой ядра кедров</div> 
+<script>
+    var first = document.querySelectorAll('#string-3');
+    Array.from(first).forEach(function(twist){
+        console.log(twist.textContent);
+    });
+    var second = document.querySelectorAll('#string-5');
+    Array.from(second).forEach(function(twist){
+        console.log(twist.textContent);
+    });
+    var third = document.querySelectorAll('#string-2');
+    Array.from(third).forEach(function(twist){
+        console.log(twist.textContent);
+    });
+    var fourth = document.querySelectorAll('#string-6');
+    Array.from(fourth).forEach(function(twist){
+        console.log(twist.textContent);
+    });
+    var fifth = document.querySelectorAll('#string-4');
+    Array.from(fifth).forEach(function(twist){
+        console.log(twist.textContent);
+    });
+    var sixth = document.querySelectorAll('#string-1');
+    Array.from(sixth).forEach(function(twist){
+        console.log(twist.textContent);
+    });
+</script>
+<br>
+<!-- Task 4 (#2) -->
+<div class="element">Element 1</div>
+<div class="element">Element 2</div>
+<div class="element">Element 3</div>
+<div class="element">Element 4</div>
+<div class="element">Element 5</div>
+<div class="element">Element 6</div>
+<script>
+var elements = document.getElementsByClassName('element');
+elements[0].style.color = "red";
+elements[1].style.color = "red";
+elements[2].style.color = "red";
+elements[3].style.color = "green";
+elements[4].style.color = "green";
+elements[5].style.color = "green";
+</script>
+<!-- Task 4 (#3) -->
+<ol id="todo-list"> </ol>
+<script>
+
+    var tasks = ['Buy lemonade', 'Make toasts', 'Repair car', 'Play games', 'Pet a cat'];
+    var ol = document.createElement('ol');
+        document.getElementById('todo-list').appendChild(ol);
+        
+        tasks.forEach(function (item) {
+            var li = document.createElement('li');
+            ol.appendChild(li);
+            li.innerHTML += item;
+            li.setAttribute("class","task");
+});
+
+</script>
+<!-- Task 4 (#4) -->
+<article>
+        <h3>What is Lorem Ipsum?</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
+        <h3>Where does it come from?</h3>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. from "The Extremes of Good and Evil" by Cicero</p>
+        <h3>Why do we use it?</h3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        </article>
+        
+<script>
+var paragraph = document.getElementsByTagName('p')
+for (var i = 0; i < paragraph.length; i ++) {
+    paragraph[i].parentNode.insertBefore(document.createElement('hr'), paragraph[i].nextSibling)
+}
+</script>
+<!-- Task 4 (#4) -->
+<div id="cart-items">
+        <div class="item">Milk 1 l.<span class="qty">x 2</span></div>
+        <div class="item">Cola 1.5 l. <span class="qty">x 1</span></div>
+        <div class="item">Bread<span class="qty">x 2</span></div>
+        <div class="item">Cheese<span class="qty">x 1</span></div>
+        <div class="item">Chocolate bar<span class="qty">x 3</span></div>
+    </div>
+    <script>
+    const cola = document.querySelector('#cart-items div:nth-child(2)');
+        cola.remove();
+    
+    const choco = document.getElementById("cart-items");
+    const chocoli = choco.children[3];
+
+    var qty = document.createElement('span')
+    qty.innerHTML = (" 4");
+    var fish = document.createElement("div");
+    fish.textContent="Canned Fish";
+    fish.appendChild(qty);
+    fish.setAttribute("class","item");
+    qty.setAttribute("class","qty");
+    choco.replaceChild(fish, chocoli);
+</script>
+
+<!-- Task 4 (#4) -->
+
+<button onclick="taskFunction()">Add more tasks!</button>
+
+<ul id="tasklist"></ul> 
+
+<script>
+  function taskFunction(){
+        var tasks = prompt("Enter your tasks","Nothing");
+        if (tasks==null || tasks==""){
+            var txt="";
+        }else{
+        listNode = document.getElementById('tasklist'),
+        liNode = document.createElement("li"),
+        tasksNode = document.createTextNode(tasks);
+
+        liNode.appendChild(tasksNode);
+        listNode.appendChild(liNode);
+        }
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
